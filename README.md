@@ -12,19 +12,21 @@ A GitHub action that will compare the benchmark output between a PR and master, 
 
 ## Usage
 
-Create a `.github/main.workflow` file in your repo:
+Create a `.github/workflows/pull_request.yml` workflow file in your repo:
 
-```hcl
-# .github/main.workflow
+```yaml
+# .github/workflows/pull_request.yml
 
-workflow "benchmark pull requests" {
-  on = "pull_request"
-  resolves = ["run benchmark"]
-}
-
-action "run benchmark" {
-  uses = "matchai/criterion-compare-action@master"
-  secrets = ["GITHUB_TOKEN"]
-}
-
+on: [pull_request]
+name: benchmark pull requests
+jobs:
+  runBenchmark:
+    name: run benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: run benchmark
+        uses: matchai/criterion-compare-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
