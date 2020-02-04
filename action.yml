@@ -1,0 +1,9 @@
+name: criterion-compare
+author: Matan Kushner <hello@matchai.dev>
+description: Compare the performance of a PR against master
+run:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'refresh-cw'
+  color: 'purple'
