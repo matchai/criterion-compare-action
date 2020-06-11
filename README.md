@@ -1,6 +1,8 @@
 <h3 align="center">criterion-compare</h3>
 <p align="center">Compare the performance of a PR against master</p>
 
+> 👋 I've stopped working on this project, but the kind folks at [boa-dev](https://github.com/boa-dev/)s will continue working on it over at [boa-dev/criterion-compare-action](https://github.com/boa-dev/criterion-compare-action)
+
 ---
 
 > ⚠️ Performance benchmarks provided by this action may fluctuate as load on GitHub Actions does. Run benchmarks locally before making any decisions based on the results.
